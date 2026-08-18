@@ -1,1 +1,316 @@
-just demo
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My GitHub Page</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #c9d1d9;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #0d1117, #161b22);
+    }
+
+    .hero h1 {
+      color: #fff;
+      font-size: 52px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #58a6ff;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #8b949e;
+      font-size: 18px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 22px;
+      margin: 5px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #30363d;
+    }
+
+    .btn-primary {
+      background: #238636;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #2ea043;
+    }
+
+    .btn-secondary {
+      color: #58a6ff;
+      background: #161b22;
+    }
+
+    .btn-secondary:hover {
+      background: #21262d;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    section h2 {
+      color: #fff;
+      font-size: 30px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .about {
+      text-align: center;
+      color: #8b949e;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 25px;
+      transition: 0.2s;
+    }
+
+    .project:hover {
+      border-color: #58a6ff;
+      transform: translateY(-3px);
+    }
+
+    .project h3 {
+      color: #58a6ff;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      color: #8b949e;
+      margin-bottom: 15px;
+    }
+
+    .project a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    .skills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 20px;
+      padding: 8px 16px;
+      color: #c9d1d9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #161b22;
+      border-top: 1px solid #30363d;
+      color: #8b949e;
+    }
+
+    footer a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">My GitHub Page</div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <h1>Hello, I'm <span>Your Name</span></h1>
+
+      <p>
+        Developer, creator, and technology enthusiast.
+        Welcome to my personal GitHub webpage.
+      </p>
+
+      <div class="buttons">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="https://github.com/" class="btn btn-secondary">
+          GitHub Profile
+        </a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+
+      <p class="about">
+        I'm a passionate developer who enjoys building websites,
+        applications, and experimenting with new technologies.
+        This page is hosted using GitHub Pages.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>My Projects</h2>
+
+      <div class="projects">
+
+        <div class="project">
+          <h3>Project One</h3>
+          <p>
+            A simple web project built with HTML, CSS, and JavaScript.
+          </p>
+          <a href="#">View Project →</a>
+        </div>
+
+        <div class="project">
+          <h3>Project Two</h3>
+          <p>
+            Another project demonstrating my development and design skills.
+          </p>
+          <a href="#">View Project →</a>
+        </div>
+
+        <div class="project">
+          <h3>Project Three</h3>
+          <p>
+            An experimental project created to learn new technologies.
+          </p>
+          <a href="#">View Project →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+
+      <div class="skills">
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">Git</span>
+        <span class="skill">GitHub</span>
+        <span class="skill">Python</span>
+        <span class="skill">Web Design</span>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <p class="about">
+        You can find me on GitHub or contact me through email.
+      </p>
+
+      <div class="buttons" style="text-align: center;">
+        <a href="https://github.com/" class="btn btn-primary">
+          GitHub
+        </a>
+
+        <a href="mailto:you@example.com" class="btn btn-secondary">
+          Email Me
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      © 2026 Your Name · Built with HTML & CSS
+    </p>
+  </footer>
+
+</body>
+</html>
