@@ -182,6 +182,27 @@
       text-decoration: none;
     }
 
+    .footer-links {
+    margin-bottom: 15px;
+  }
+
+  .footer-links a {
+    color: #58a6ff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+  }
+
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    .footer-links a {
+      display: block;
+      margin: 8px 0;
+    }
+  }
     @media (max-width: 600px) {
       header {
         flex-direction: column;
@@ -306,11 +327,21 @@
 
   </main>
 
-  <footer>
-    <p>
-      © 2026 Your Name · Built with HTML & CSS
-    </p>
-  </footer>
+ <footer>
+  <div class="footer-links">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="support.html">Support</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="delete-account.html">Delete Account</a>
+  </div>
+
+  <p>
+    © 2026 Your Name. All rights reserved.
+  </p>
+</footer>
+
+
 
 </body>
 </html>
