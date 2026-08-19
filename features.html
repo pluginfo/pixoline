@@ -1,1 +1,1210 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Explore PixOLine features including shape drawing, Boolean operations, vector editing, SVG and image support, typography, templates, design generator, multiple pages and professional export tools.">
+
+  <title>Features — PixOLine</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      padding: 10px 8% 8px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #c9d1d9;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      text-align: center;
+      padding: 110px 20px 100px;
+      background:
+        radial-gradient(circle at top, #172554 0%, transparent 45%),
+        linear-gradient(135deg, #0d1117, #161b22);
+      border-bottom: 1px solid #30363d;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 16px;
+      margin-bottom: 22px;
+      border: 1px solid #30363d;
+      border-radius: 30px;
+      background: #161b22;
+      color: #58a6ff;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      color: #fff;
+      font-size: 58px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #58a6ff;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: auto;
+      color: #8b949e;
+      font-size: 19px;
+    }
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    main {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    section {
+      padding: 85px 20px;
+    }
+
+    section h2 {
+      color: #fff;
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .section-description {
+      text-align: center;
+      color: #8b949e;
+      max-width: 780px;
+      margin: 0 auto 50px;
+      font-size: 17px;
+    }
+
+    /* =========================
+       FEATURE GRID
+    ========================= */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .feature {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 28px;
+      transition: 0.25s;
+    }
+
+    .feature:hover {
+      border-color: #58a6ff;
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .feature p {
+      color: #8b949e;
+      font-size: 15px;
+    }
+
+    /* =========================
+       FEATURE DETAILS
+    ========================= */
+
+    .detail {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 25px;
+      align-items: start;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 20px;
+      transition: 0.2s;
+    }
+
+    .detail:hover {
+      border-color: #58a6ff;
+    }
+
+    .detail-icon {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 14px;
+      font-size: 34px;
+    }
+
+    .detail h3 {
+      color: #fff;
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .detail p {
+      color: #8b949e;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .detail ul {
+      margin: 10px 0 0 20px;
+      color: #8b949e;
+    }
+
+    .detail li {
+      margin-bottom: 5px;
+    }
+
+    /* =========================
+       HIGHLIGHT
+    ========================= */
+
+    .highlight {
+      background: linear-gradient(135deg, #161b22, #111827);
+      border: 1px solid #30363d;
+      border-radius: 14px;
+      padding: 55px 30px;
+      text-align: center;
+    }
+
+    .highlight h2 {
+      margin-bottom: 15px;
+    }
+
+    .highlight p {
+      color: #8b949e;
+      max-width: 780px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    /* =========================
+       CATEGORY GRID
+    ========================= */
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .category {
+      text-align: center;
+      padding: 28px 20px;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+    }
+
+    .category-icon {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .category h3 {
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .category p {
+      color: #8b949e;
+      font-size: 14px;
+    }
+
+    /* =========================
+       EXPORT
+    ========================= */
+
+    .formats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .format {
+      background: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 10px 22px;
+      color: #c9d1d9;
+      font-weight: 600;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .buttons {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 5px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #30363d;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #238636;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #2ea043;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      color: #58a6ff;
+      background: #161b22;
+    }
+
+    .btn-secondary:hover {
+      background: #21262d;
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: #161b22;
+      border-top: 1px solid #30363d;
+      color: #8b949e;
+    }
+
+    footer a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    .footer-links {
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .hero {
+        padding: 80px 20px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+
+      .detail {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-icon {
+        width: 60px;
+        height: 60px;
+      }
+
+      .footer-links a {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <div class="logo">
+      <a href="https://pluginfotech.github.io/pixoline/" title="PixOLine">
+        <img src="pixoline_logo_white.png" alt="PixOLine">
+      </a>
+    </div>
+
+    <nav>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+      <a href="learn.html">Learn</a>
+      <a href="download.html">Download</a>
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="hero">
+
+    <div class="badge">
+      Powerful Creative Tools
+    </div>
+
+    <h1>
+      Everything You Need to <span>Create.</span>
+    </h1>
+
+    <p>
+      PixOLine brings drawing, vector editing, image editing,
+      typography, templates, effects and export tools together
+      in one powerful creative workspace for Android.
+    </p>
+
+  </section>
+
+
+  <main>
+
+
+    <!-- =========================
+         FEATURE OVERVIEW
+    ========================= -->
+
+    <section>
+
+      <h2>Explore PixOLine Features</h2>
+
+      <p class="section-description">
+        From simple shapes to detailed vector artwork, PixOLine
+        provides a complete collection of creative tools designed
+        for both beginners and experienced designers.
+      </p>
+
+
+      <div class="features">
+
+        <div class="feature">
+          <div class="feature-icon">✏️</div>
+          <h3>Shape Drawing</h3>
+          <p>
+            Draw and customize a wide variety of shapes
+            for your creative projects.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-icon">🔷</div>
+          <h3>Boolean Shapes</h3>
+          <p>
+            Combine, subtract and modify shapes to create
+            complex custom objects.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-icon">🔗</div>
+          <h3>Weld</h3>
+          <p>
+            Weld multiple shapes together to create
+            custom objects and unique designs.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-icon">🛤️</div>
+          <h3>Path Editing</h3>
+          <p>
+            Create and edit paths for detailed vector
+            artwork and custom shapes.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-icon">🖼️</div>
+          <h3>Image Import</h3>
+          <p>
+            Import images into your projects and combine
+            them with your designs.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>SVG Import</h3>
+          <p>
+            Import scalable SVG graphics and use vector
+            artwork in your projects.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-icon">✨</div>
+          <h3>Image Effects</h3>
+          <p>
+            Apply image effects and customize imported
+            images directly in PixOLine.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-icon">🎨</div>
+          <h3>Thousands of Icons</h3>
+          <p>
+            Use thousands of pre-loaded icons to enhance
+            your creative projects quickly.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-icon">🔤</div>
+          <h3>Font Installation</h3>
+          <p>
+            Install supported fonts and create personalized
+            typography for your designs.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-icon">✂️</div>
+          <h3>Break Apart</h3>
+          <p>
+            Break objects apart for detailed editing and
+            greater control over individual elements.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-icon">📝</div>
+          <h3>Paragraph & Columns</h3>
+          <p>
+            Create structured text layouts using paragraph
+            and column support.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-icon">📄</div>
+          <h3>Multiple Pages</h3>
+          <p>
+            Create multiple pages within a single project
+            and manage your designs together.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-icon">📐</div>
+          <h3>Design Tools</h3>
+          <p>
+            Build your designs using a flexible workspace
+            with multiple creative and editing tools.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-icon">🧩</div>
+          <h3>Pre-Built Templates</h3>
+          <p>
+            Start quickly with ready-made templates and
+            customize them for your own projects.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-icon">🚀</div>
+          <h3>Design Generator</h3>
+          <p>
+            Generate a starting point for your design and
+            customize it using PixOLine tools.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-icon">📤</div>
+          <h3>Easy to Share</h3>
+          <p>
+            Share finished designs or export your work
+            in popular formats.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         VECTOR DESIGN
+    ========================= -->
+
+    <section>
+
+      <div class="highlight">
+
+        <h2>Powerful Vector Design</h2>
+
+        <p>
+          Build custom artwork using shapes, Boolean operations,
+          welding, path editing and other vector-based tools.
+          PixOLine gives you control over individual design
+          elements so you can create everything from simple
+          graphics to detailed illustrations.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SHAPE TOOLS
+    ========================= -->
+
+    <section>
+
+      <h2>Shape & Vector Tools</h2>
+
+      <p class="section-description">
+        Create your artwork from basic elements and transform
+        them into custom graphics using PixOLine's editing tools.
+      </p>
+
+
+      <div class="detail">
+
+        <div class="detail-icon">🔷</div>
+
+        <div>
+
+          <h3>Boolean Operations</h3>
+
+          <p>
+            Combine multiple shapes to create new objects
+            and more complex artwork.
+          </p>
+
+          <ul>
+            <li>Combine shapes</li>
+            <li>Subtract shapes</li>
+            <li>Modify overlapping objects</li>
+            <li>Create custom geometric artwork</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="detail">
+
+        <div class="detail-icon">🔗</div>
+
+        <div>
+
+          <h3>Weld Objects</h3>
+
+          <p>
+            Join multiple shapes together to create a single
+            custom object.
+          </p>
+
+          <ul>
+            <li>Combine multiple objects</li>
+            <li>Create custom silhouettes</li>
+            <li>Build unique vector shapes</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="detail">
+
+        <div class="detail-icon">🛤️</div>
+
+        <div>
+
+          <h3>Path Editing</h3>
+
+          <p>
+            Work with editable paths when you need more
+            detailed control over vector artwork.
+          </p>
+
+          <ul>
+            <li>Create custom paths</li>
+            <li>Edit vector artwork</li>
+            <li>Build custom shapes</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="detail">
+
+        <div class="detail-icon">✂️</div>
+
+        <div>
+
+          <h3>Break Apart</h3>
+
+          <p>
+            Separate objects into individual elements for
+            more detailed editing.
+          </p>
+
+          <ul>
+            <li>Separate grouped artwork</li>
+            <li>Edit individual elements</li>
+            <li>Gain greater control over complex designs</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         IMAGE FEATURES
+    ========================= -->
+
+    <section>
+
+      <h2>Images & Graphics</h2>
+
+      <p class="section-description">
+        Combine vector artwork with imported images and
+        enhance your designs using image tools.
+      </p>
+
+
+      <div class="categories">
+
+        <div class="category">
+
+          <div class="category-icon">🖼️</div>
+
+          <h3>Image Import</h3>
+
+          <p>
+            Bring your existing images into your PixOLine
+            projects and combine them with your artwork.
+          </p>
+
+        </div>
+
+
+        <div class="category">
+
+          <div class="category-icon">⚡</div>
+
+          <h3>SVG Import</h3>
+
+          <p>
+            Import scalable vector graphics and incorporate
+            SVG artwork into your designs.
+          </p>
+
+        </div>
+
+
+        <div class="category">
+
+          <div class="category-icon">✨</div>
+
+          <h3>Image Effects</h3>
+
+          <p>
+            Apply supported effects and customize imported
+            images directly within your project.
+          </p>
+
+        </div>
+
+
+        <div class="category">
+
+          <div class="category-icon">🎨</div>
+
+          <h3>Icons</h3>
+
+          <p>
+            Use thousands of pre-loaded icons to quickly
+            add visual elements to your designs.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         TYPOGRAPHY
+    ========================= -->
+
+    <section>
+
+      <div class="highlight">
+
+        <h2>Typography & Layout</h2>
+
+        <p>
+          Create structured text layouts using typography,
+          paragraph and column features. Install supported
+          fonts to personalize your designs and create
+          distinctive visual styles.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         TEMPLATES
+    ========================= -->
+
+    <section>
+
+      <h2>Start Faster With Templates</h2>
+
+      <p class="section-description">
+        You don't always need to start with a blank canvas.
+        PixOLine provides pre-built templates that give you
+        a starting point for your next project.
+      </p>
+
+
+      <div class="detail">
+
+        <div class="detail-icon">🧩</div>
+
+        <div>
+
+          <h3>Pre-Built Templates</h3>
+
+          <p>
+            Choose a ready-made design and customize it
+            according to your requirements.
+          </p>
+
+          <ul>
+            <li>Start projects quickly</li>
+            <li>Customize existing designs</li>
+            <li>Use templates as creative inspiration</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         DESIGN GENERATOR
+    ========================= -->
+
+    <section>
+
+      <h2>Design Generator</h2>
+
+      <p class="section-description">
+        Get a head start on your next creative project with
+        the PixOLine Design Generator.
+      </p>
+
+
+      <div class="categories">
+
+        <div class="category">
+
+          <div class="category-icon">💡</div>
+
+          <h3>Get Inspired</h3>
+
+          <p>
+            Quickly create a starting point when you need
+            inspiration for a new project.
+          </p>
+
+        </div>
+
+
+        <div class="category">
+
+          <div class="category-icon">🎨</div>
+
+          <h3>Customize</h3>
+
+          <p>
+            Continue editing generated designs using the
+            full collection of PixOLine tools.
+          </p>
+
+        </div>
+
+
+        <div class="category">
+
+          <div class="category-icon">⚡</div>
+
+          <h3>Design Faster</h3>
+
+          <p>
+            Start with a generated design instead of
+            creating every project from an empty canvas.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         MULTIPLE PAGES
+    ========================= -->
+
+    <section>
+
+      <div class="highlight">
+
+        <h2>Multiple Pages in One Project</h2>
+
+        <p>
+          Create multiple pages within a single project and
+          keep related designs together. This makes PixOLine
+          useful for projects that require more than one
+          design or layout.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPORT
+    ========================= -->
+
+    <section>
+
+      <h2>Export & Share Your Designs</h2>
+
+      <p class="section-description">
+        Save your finished artwork in supported formats,
+        share it with others, or keep an editable PixOLine
+        project for future work.
+      </p>
+
+
+      <div class="formats">
+
+        <span class="format">PDF</span>
+        <span class="format">PNG</span>
+        <span class="format">JPG</span>
+        <span class="format">PixOLine</span>
+
+      </div>
+
+
+      <div class="detail" style="margin-top: 40px;">
+
+        <div class="detail-icon">📤</div>
+
+        <div>
+
+          <h3>Easy Sharing</h3>
+
+          <p>
+            Share your finished designs with other applications
+            or people using the sharing capabilities available
+            on your Android device.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PHONE & TABLET
+    ========================= -->
+
+    <section>
+
+      <div class="highlight">
+
+        <h2>Designed for Android</h2>
+
+        <p>
+          PixOLine is designed for Android phones and tablets,
+          allowing you to create and edit your designs wherever
+          you work best.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FREE
+    ========================= -->
+
+    <section>
+
+      <h2>Free. Simple. No Account Required.</h2>
+
+      <p class="section-description">
+        PixOLine is designed to make graphic design accessible
+        without unnecessary complexity.
+      </p>
+
+
+      <div class="categories">
+
+        <div class="category">
+
+          <div class="category-icon">🆓</div>
+
+          <h3>Completely Free</h3>
+
+          <p>
+            Create and edit your designs without requiring
+            a paid subscription.
+          </p>
+
+        </div>
+
+
+        <div class="category">
+
+          <div class="category-icon">🔓</div>
+
+          <h3>No Account Required</h3>
+
+          <p>
+            Start designing without registration or
+            creating an account.
+          </p>
+
+        </div>
+
+
+        <div class="category">
+
+          <div class="category-icon">📱</div>
+
+          <h3>Design Anywhere</h3>
+
+          <p>
+            Create on compatible Android phones and tablets
+            wherever you are.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================= -->
+
+    <section>
+
+      <div class="highlight">
+
+        <h2>Ready to Start Creating?</h2>
+
+        <p>
+          Explore PixOLine's creative tools and bring your
+          ideas to life with a flexible graphic design
+          workspace for Android.
+        </p>
+
+        <div class="buttons">
+
+          <a href="download.html" class="btn btn-primary">
+            Download PixOLine
+          </a>
+
+          <a href="learn.html" class="btn btn-secondary">
+            Learn More
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="footer-links">
+
+      <a href="about.html">About</a>
+
+      <a href="support.html">Support</a>
+
+      <a href="privacy-and-policy.html">
+        Privacy Policy
+      </a>
+
+      <a href="terms-and-conditions.html">
+        Terms of Service
+      </a>
+
+      <a href="contact.html">
+        Contact Us
+      </a>
+
+    </div>
+
+    <p>
+      © 2026 PixOLine. All rights reserved.
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
