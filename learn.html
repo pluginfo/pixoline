@@ -28,6 +28,10 @@
       line-height: 1.7;
     }
 
+    /* =========================
+       HEADER
+    ========================= */
+
     header {
       background: #161b22;
       border-bottom: 1px solid #30363d;
@@ -58,11 +62,19 @@
       color: #58a6ff;
     }
 
+    /* =========================
+       MAIN
+    ========================= */
+
     main {
       max-width: 1200px;
       margin: auto;
       padding: 70px 20px 90px;
     }
+
+    /* =========================
+       PAGE HEADER
+    ========================= */
 
     .page-header {
       text-align: center;
@@ -106,7 +118,9 @@
       margin: auto;
     }
 
-    /* DOCUMENTATION */
+    /* =========================
+       DOCUMENTATION LAYOUT
+    ========================= */
 
     .docs-layout {
       display: grid;
@@ -115,15 +129,56 @@
       align-items: start;
     }
 
-    /* SIDEBAR */
+    /* =========================
+       LEFT SIDEBAR
+    ========================= */
 
     .docs-sidebar {
       background: #161b22;
       border: 1px solid #30363d;
       border-radius: 12px;
       padding: 20px;
+
       position: sticky;
       top: 85px;
+
+      /*
+        Sidebar gets its own scrollbar.
+        It will use the available viewport height
+        instead of becoming extremely long.
+      */
+      max-height: calc(100vh - 105px);
+
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      /*
+        Firefox scrollbar
+      */
+      scrollbar-width: thin;
+      scrollbar-color: #30363d #161b22;
+    }
+
+    /*
+      Chrome / Edge / Safari scrollbar
+    */
+
+    .docs-sidebar::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    .docs-sidebar::-webkit-scrollbar-track {
+      background: #161b22;
+      border-radius: 10px;
+    }
+
+    .docs-sidebar::-webkit-scrollbar-thumb {
+      background: #30363d;
+      border-radius: 10px;
+    }
+
+    .docs-sidebar::-webkit-scrollbar-thumb:hover {
+      background: #58a6ff;
     }
 
     .docs-sidebar h2 {
@@ -173,7 +228,9 @@
       margin: 20px 12px 7px;
     }
 
-    /* DOCUMENT CONTENT */
+    /* =========================
+       DOCUMENT CONTENT
+    ========================= */
 
     .docs-content {
       background: #161b22;
@@ -230,7 +287,9 @@
       color: #c9d1d9;
     }
 
-    /* INTRO */
+    /* =========================
+       INTRO
+    ========================= */
 
     .docs-intro {
       background: #111827;
@@ -245,7 +304,9 @@
       margin: 0;
     }
 
-    /* STEPS */
+    /* =========================
+       STEPS
+    ========================= */
 
     .step {
       display: flex;
@@ -260,9 +321,11 @@
       background: #238636;
       border: 1px solid #2ea043;
       color: #fff;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       font-weight: 700;
       font-size: 14px;
     }
@@ -279,7 +342,9 @@
       margin-bottom: 0;
     }
 
-    /* INFO CARDS */
+    /* =========================
+       INFO CARDS
+    ========================= */
 
     .info-grid {
       display: grid;
@@ -311,7 +376,9 @@
       margin: 0;
     }
 
-    /* CODE / UI EXAMPLE */
+    /* =========================
+       CODE / UI EXAMPLE
+    ========================= */
 
     .code-example {
       background: #0d1117;
@@ -328,7 +395,9 @@
       font-size: 14px;
     }
 
-    /* NOTICE */
+    /* =========================
+       NOTICE
+    ========================= */
 
     .notice {
       background: #111827;
@@ -351,7 +420,9 @@
       border-left-color: #d29922;
     }
 
-    /* TABLE */
+    /* =========================
+       TABLE
+    ========================= */
 
     .docs-table-wrapper {
       overflow-x: auto;
@@ -388,6 +459,10 @@
       border-bottom: none;
     }
 
+    /* =========================
+       LINKS
+    ========================= */
+
     a {
       color: #58a6ff;
       text-decoration: none;
@@ -397,7 +472,9 @@
       text-decoration: underline;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       text-align: center;
@@ -425,7 +502,9 @@
       text-decoration: underline;
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 850px) {
 
@@ -458,8 +537,25 @@
         grid-template-columns: 1fr;
       }
 
+      /*
+        Disable independent sidebar scrolling
+        on mobile devices.
+      */
+
       .docs-sidebar {
         position: static;
+        max-height: none;
+        overflow-y: visible;
+        overflow-x: visible;
+
+        /*
+          Hide desktop scrollbar styling on mobile.
+        */
+        scrollbar-width: auto;
+      }
+
+      .docs-sidebar::-webkit-scrollbar {
+        width: auto;
       }
 
       .docs-sidebar ul {
@@ -512,35 +608,60 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================= -->
 
   <header>
 
     <div class="logo">
-      <a href="https://pluginfotech.github.io/pixoline/" title="PixOLine">
-        <img src="pixoline_logo_white.png" alt="PixOLine">
+
+      <a
+        href="https://pluginfotech.github.io/pixoline/"
+        title="PixOLine"
+      >
+
+        <img
+          src="pixoline_logo_white.png"
+          alt="PixOLine"
+        >
+
       </a>
+
     </div>
 
     <nav>
+
       <a href="about.html">About</a>
+
       <a href="features.html">Features</a>
+
       <a href="learn.html">Learn</a>
+
       <a href="download.html">Download</a>
+
     </nav>
 
   </header>
 
 
-  <!-- LEARN / DOCUMENTATION -->
+  <!-- =========================
+       LEARN / DOCUMENTATION
+  ========================= -->
 
   <main>
 
+    <!-- PAGE HEADER -->
+
     <section class="page-header">
 
-      <div class="badge">Tutorials & Documentation</div>
+      <div class="badge">
+        Tutorials & Documentation
+      </div>
 
-      <h1>Learn PixOLine</h1>
+      <h1>
+        Learn PixOLine
+      </h1>
 
       <p>
         Learn how to use PixOLine step by step. Explore our tutorials
@@ -551,14 +672,23 @@
     </section>
 
 
+    <!-- DOCUMENTATION LAYOUT -->
+
     <div class="docs-layout">
 
 
-      <!-- LEFT SIDEBAR -->
+      <!-- =========================
+           LEFT SIDEBAR
+      ========================= -->
 
       <aside class="docs-sidebar">
 
-        <h2>PixOLine Tutorials</h2>
+        <h2>
+          PixOLine Tutorials
+        </h2>
+
+
+        <!-- GETTING STARTED -->
 
         <div class="sidebar-label">
           Getting Started
@@ -586,6 +716,8 @@
 
         </ul>
 
+
+        <!-- DESIGN TOOLS -->
 
         <div class="sidebar-label">
           Design Tools
@@ -620,6 +752,8 @@
         </ul>
 
 
+        <!-- FINISH DESIGN -->
+
         <div class="sidebar-label">
           Finish Your Design
         </div>
@@ -647,6 +781,8 @@
         </ul>
 
 
+        <!-- MORE HELP -->
+
         <div class="sidebar-label">
           More Help
         </div>
@@ -656,6 +792,12 @@
           <li>
             <a href="#troubleshooting">
               Troubleshooting
+            </a>
+          </li>
+
+          <li>
+            <a href="#next-steps">
+              Next Steps
             </a>
           </li>
 
@@ -670,23 +812,37 @@
       </aside>
 
 
-      <!-- RIGHT DOCUMENTATION -->
+      <!-- =========================
+           RIGHT DOCUMENTATION
+      ========================= -->
 
       <article class="docs-content">
 
 
-        <!-- INTRODUCTION -->
+        <!-- =========================
+             1. INTRODUCTION
+        ========================= -->
 
-        <section class="docs-section" id="introduction">
+        <section
+          class="docs-section"
+          id="introduction"
+        >
 
-          <h2>1. Introduction</h2>
+          <h2>
+            1. Introduction
+          </h2>
 
           <div class="docs-intro">
 
             <p>
-              <strong>Welcome to the PixOLine documentation.</strong>
+
+              <strong>
+                Welcome to the PixOLine documentation.
+              </strong>
+
               This guide explains the basic workflow for creating
               and editing designs using PixOLine on Android.
+
             </p>
 
           </div>
@@ -702,13 +858,18 @@
             following these tutorials in order.
           </p>
 
+
           <div class="info-grid">
 
             <div class="info-card">
 
-              <div class="icon">📱</div>
+              <div class="icon">
+                📱
+              </div>
 
-              <h3>Android Workspace</h3>
+              <h3>
+                Android Workspace
+              </h3>
 
               <p>
                 Create and edit your projects directly from your
@@ -717,11 +878,16 @@
 
             </div>
 
+
             <div class="info-card">
 
-              <div class="icon">🎨</div>
+              <div class="icon">
+                🎨
+              </div>
 
-              <h3>Creative Tools</h3>
+              <h3>
+                Creative Tools
+              </h3>
 
               <p>
                 Add text, images, shapes, colors, and other elements
@@ -735,24 +901,36 @@
         </section>
 
 
-        <!-- CREATE PROJECT -->
+        <!-- =========================
+             2. CREATE PROJECT
+        ========================= -->
 
-        <section class="docs-section" id="create-project">
+        <section
+          class="docs-section"
+          id="create-project"
+        >
 
-          <h2>2. Create a New Project</h2>
+          <h2>
+            2. Create a New Project
+          </h2>
 
           <p>
             The first step in creating a design is to start a new
             project. A project acts as the workspace for your artwork.
           </p>
 
+
           <div class="step">
 
-            <div class="step-number">1</div>
+            <div class="step-number">
+              1
+            </div>
 
             <div class="step-content">
 
-              <h3>Open PixOLine</h3>
+              <h3>
+                Open PixOLine
+              </h3>
 
               <p>
                 Launch PixOLine from your Android device and open the
@@ -766,11 +944,15 @@
 
           <div class="step">
 
-            <div class="step-number">2</div>
+            <div class="step-number">
+              2
+            </div>
 
             <div class="step-content">
 
-              <h3>Select New Project</h3>
+              <h3>
+                Select New Project
+              </h3>
 
               <p>
                 Tap the option for creating a new project. You may
@@ -784,11 +966,15 @@
 
           <div class="step">
 
-            <div class="step-number">3</div>
+            <div class="step-number">
+              3
+            </div>
 
             <div class="step-content">
 
-              <h3>Choose a Canvas</h3>
+              <h3>
+                Choose a Canvas
+              </h3>
 
               <p>
                 Select an appropriate canvas size for your project.
@@ -804,10 +990,15 @@
           <div class="notice">
 
             <p>
-              <strong>Tip:</strong>
+
+              <strong>
+                Tip:
+              </strong>
+
               Think about where your design will be used before
               choosing the canvas size. A social media post, banner,
               and printable poster may require different dimensions.
+
             </p>
 
           </div>
@@ -815,16 +1006,24 @@
         </section>
 
 
-        <!-- INTERFACE -->
+        <!-- =========================
+             3. INTERFACE
+        ========================= -->
 
-        <section class="docs-section" id="interface">
+        <section
+          class="docs-section"
+          id="interface"
+        >
 
-          <h2>3. Understanding the Interface</h2>
+          <h2>
+            3. Understanding the Interface
+          </h2>
 
           <p>
             The PixOLine workspace contains several areas that help
             you create and edit your design.
           </p>
+
 
           <div class="docs-table-wrapper">
 
@@ -833,8 +1032,15 @@
               <thead>
 
                 <tr>
-                  <th>Area</th>
-                  <th>Purpose</th>
+
+                  <th>
+                    Area
+                  </th>
+
+                  <th>
+                    Purpose
+                  </th>
+
                 </tr>
 
               </thead>
@@ -842,31 +1048,51 @@
               <tbody>
 
                 <tr>
-                  <td>Canvas</td>
+
+                  <td>
+                    Canvas
+                  </td>
+
                   <td>
                     The main area where your design is created.
                   </td>
+
                 </tr>
 
                 <tr>
-                  <td>Toolbar</td>
+
+                  <td>
+                    Toolbar
+                  </td>
+
                   <td>
                     Provides access to common editing and design tools.
                   </td>
+
                 </tr>
 
                 <tr>
-                  <td>Layers</td>
+
+                  <td>
+                    Layers
+                  </td>
+
                   <td>
                     Helps organize and manage individual design elements.
                   </td>
+
                 </tr>
 
                 <tr>
-                  <td>Properties</td>
+
+                  <td>
+                    Properties
+                  </td>
+
                   <td>
                     Allows you to adjust selected elements.
                   </td>
+
                 </tr>
 
               </tbody>
@@ -878,22 +1104,35 @@
         </section>
 
 
-        <!-- TEXT -->
+        <!-- =========================
+             4. TEXT
+        ========================= -->
 
-        <section class="docs-section" id="text">
+        <section
+          class="docs-section"
+          id="text"
+        >
 
-          <h2>4. Adding Text</h2>
+          <h2>
+            4. Adding Text
+          </h2>
 
           <p>
             Text is useful for titles, captions, labels, announcements,
             posters, and many other types of designs.
           </p>
 
-          <h3>Add a Text Element</h3>
+
+          <h3>
+            Add a Text Element
+          </h3>
+
 
           <div class="step">
 
-            <div class="step-number">1</div>
+            <div class="step-number">
+              1
+            </div>
 
             <div class="step-content">
 
@@ -905,9 +1144,12 @@
 
           </div>
 
+
           <div class="step">
 
-            <div class="step-number">2</div>
+            <div class="step-number">
+              2
+            </div>
 
             <div class="step-content">
 
@@ -919,9 +1161,12 @@
 
           </div>
 
+
           <div class="step">
 
-            <div class="step-number">3</div>
+            <div class="step-number">
+              3
+            </div>
 
             <div class="step-content">
 
@@ -933,45 +1178,72 @@
 
           </div>
 
-          <h3>Useful Text Settings</h3>
+
+          <h3>
+            Useful Text Settings
+          </h3>
 
           <ul>
 
-            <li>Font family and font style.</li>
+            <li>
+              Font family and font style.
+            </li>
 
-            <li>Font size.</li>
+            <li>
+              Font size.
+            </li>
 
-            <li>Text color.</li>
+            <li>
+              Text color.
+            </li>
 
-            <li>Alignment.</li>
+            <li>
+              Alignment.
+            </li>
 
-            <li>Position and size.</li>
+            <li>
+              Position and size.
+            </li>
 
-            <li>Spacing and other available formatting options.</li>
+            <li>
+              Spacing and other available formatting options.
+            </li>
 
           </ul>
 
         </section>
 
 
-        <!-- IMAGES -->
+        <!-- =========================
+             5. IMAGES
+        ========================= -->
 
-        <section class="docs-section" id="images">
+        <section
+          class="docs-section"
+          id="images"
+        >
 
-          <h2>5. Adding Images</h2>
+          <h2>
+            5. Adding Images
+          </h2>
 
           <p>
             Images can be imported from your device and placed inside
             your design.
           </p>
 
+
           <div class="step">
 
-            <div class="step-number">1</div>
+            <div class="step-number">
+              1
+            </div>
 
             <div class="step-content">
 
-              <h3>Choose Import Image</h3>
+              <h3>
+                Choose Import Image
+              </h3>
 
               <p>
                 Open the image or media import option from the
@@ -982,13 +1254,18 @@
 
           </div>
 
+
           <div class="step">
 
-            <div class="step-number">2</div>
+            <div class="step-number">
+              2
+            </div>
 
             <div class="step-content">
 
-              <h3>Select an Image</h3>
+              <h3>
+                Select an Image
+              </h3>
 
               <p>
                 Choose an image from your device gallery or supported
@@ -999,13 +1276,18 @@
 
           </div>
 
+
           <div class="step">
 
-            <div class="step-number">3</div>
+            <div class="step-number">
+              3
+            </div>
 
             <div class="step-content">
 
-              <h3>Position the Image</h3>
+              <h3>
+                Position the Image
+              </h3>
 
               <p>
                 Resize, move, and position the image according to
@@ -1016,12 +1298,18 @@
 
           </div>
 
+
           <div class="notice warning-notice">
 
             <p>
-              <strong>Note:</strong>
+
+              <strong>
+                Note:
+              </strong>
+
               Very large images may require additional memory and
               processing time on mobile devices.
+
             </p>
 
           </div>
@@ -1029,34 +1317,57 @@
         </section>
 
 
-        <!-- SHAPES -->
+        <!-- =========================
+             6. SHAPES
+        ========================= -->
 
-        <section class="docs-section" id="shapes">
+        <section
+          class="docs-section"
+          id="shapes"
+        >
 
-          <h2>6. Shapes & Colors</h2>
+          <h2>
+            6. Shapes & Colors
+          </h2>
 
           <p>
             Shapes can be used to create backgrounds, buttons,
             decorative elements, borders, and other visual components.
           </p>
 
-          <h3>Working With Shapes</h3>
+
+          <h3>
+            Working With Shapes
+          </h3>
 
           <ul>
 
-            <li>Select the Shapes tool.</li>
+            <li>
+              Select the Shapes tool.
+            </li>
 
-            <li>Choose the shape you want to add.</li>
+            <li>
+              Choose the shape you want to add.
+            </li>
 
-            <li>Place the shape on your canvas.</li>
+            <li>
+              Place the shape on your canvas.
+            </li>
 
-            <li>Resize or reposition the shape.</li>
+            <li>
+              Resize or reposition the shape.
+            </li>
 
-            <li>Adjust its color and other available properties.</li>
+            <li>
+              Adjust its color and other available properties.
+            </li>
 
           </ul>
 
-          <h3>Choosing Colors</h3>
+
+          <h3>
+            Choosing Colors
+          </h3>
 
           <p>
             Use colors that complement the purpose of your design.
@@ -1068,11 +1379,18 @@
         </section>
 
 
-        <!-- LAYERS -->
+        <!-- =========================
+             7. LAYERS
+        ========================= -->
 
-        <section class="docs-section" id="layers">
+        <section
+          class="docs-section"
+          id="layers"
+        >
 
-          <h2>7. Working With Layers</h2>
+          <h2>
+            7. Working With Layers
+          </h2>
 
           <p>
             Layers help organize multiple elements in a project.
@@ -1080,13 +1398,17 @@
             working on more complex designs.
           </p>
 
-          <h3>Layer Order</h3>
+
+          <h3>
+            Layer Order
+          </h3>
 
           <p>
             Elements higher in the layer order may appear above
             elements underneath them. You can change the order when
             one object needs to appear behind or in front of another.
           </p>
+
 
           <div class="code-example">
 
@@ -1096,6 +1418,7 @@
 
           </div>
 
+
           <p>
             A well-organized layer structure can make editing easier
             and help prevent accidental changes to other elements.
@@ -1104,20 +1427,30 @@
         </section>
 
 
-        <!-- SAVE -->
+        <!-- =========================
+             8. SAVE
+        ========================= -->
 
-        <section class="docs-section" id="save">
+        <section
+          class="docs-section"
+          id="save"
+        >
 
-          <h2>8. Saving a Project</h2>
+          <h2>
+            8. Saving a Project
+          </h2>
 
           <p>
             Save your project regularly while working so you can
             continue editing it later.
           </p>
 
+
           <div class="step">
 
-            <div class="step-number">1</div>
+            <div class="step-number">
+              1
+            </div>
 
             <div class="step-content">
 
@@ -1129,9 +1462,12 @@
 
           </div>
 
+
           <div class="step">
 
-            <div class="step-number">2</div>
+            <div class="step-number">
+              2
+            </div>
 
             <div class="step-content">
 
@@ -1143,9 +1479,12 @@
 
           </div>
 
+
           <div class="step">
 
-            <div class="step-number">3</div>
+            <div class="step-number">
+              3
+            </div>
 
             <div class="step-content">
 
@@ -1158,12 +1497,18 @@
 
           </div>
 
+
           <div class="notice success-notice">
 
             <p>
-              <strong>Best Practice:</strong>
+
+              <strong>
+                Best Practice:
+              </strong>
+
               Keep backup copies of important projects, especially
               before making major changes to your device.
+
             </p>
 
           </div>
@@ -1171,45 +1516,72 @@
         </section>
 
 
-        <!-- EXPORT -->
+        <!-- =========================
+             9. EXPORT
+        ========================= -->
 
-        <section class="docs-section" id="export">
+        <section
+          class="docs-section"
+          id="export"
+        >
 
-          <h2>9. Export Your Design</h2>
+          <h2>
+            9. Export Your Design
+          </h2>
 
           <p>
             When your design is finished, export it into a supported
             image or document format.
           </p>
 
-          <h3>Before Exporting</h3>
+
+          <h3>
+            Before Exporting
+          </h3>
 
           <ul>
 
-            <li>Check that all design elements are positioned correctly.</li>
+            <li>
+              Check that all design elements are positioned correctly.
+            </li>
 
-            <li>Review text for spelling mistakes.</li>
+            <li>
+              Review text for spelling mistakes.
+            </li>
 
-            <li>Make sure images are displayed correctly.</li>
+            <li>
+              Make sure images are displayed correctly.
+            </li>
 
-            <li>Confirm that your device has enough available storage.</li>
+            <li>
+              Confirm that your device has enough available storage.
+            </li>
 
           </ul>
 
-          <h3>Export Process</h3>
+
+          <h3>
+            Export Process
+          </h3>
 
           <p>
             Open the export option from the project menu, select your
             preferred output format, and confirm the export.
           </p>
 
+
           <div class="notice">
 
             <p>
-              <strong>Tip:</strong>
+
+              <strong>
+                Tip:
+              </strong>
+
               If an exported file is difficult to find, check your
               Downloads, Pictures, Documents, or the folder selected
               during the export process.
+
             </p>
 
           </div>
@@ -1217,11 +1589,18 @@
         </section>
 
 
-        <!-- SHARE -->
+        <!-- =========================
+             10. SHARE
+        ========================= -->
 
-        <section class="docs-section" id="share">
+        <section
+          class="docs-section"
+          id="share"
+        >
 
-          <h2>10. Share Your Design</h2>
+          <h2>
+            10. Share Your Design
+          </h2>
 
           <p>
             After exporting your design, you can use Android's sharing
@@ -1238,13 +1617,23 @@
         </section>
 
 
-        <!-- TROUBLESHOOTING -->
+        <!-- =========================
+             11. TROUBLESHOOTING
+        ========================= -->
 
-        <section class="docs-section" id="troubleshooting">
+        <section
+          class="docs-section"
+          id="troubleshooting"
+        >
 
-          <h2>11. Troubleshooting</h2>
+          <h2>
+            11. Troubleshooting
+          </h2>
 
-          <h3>PixOLine feels slow</h3>
+
+          <h3>
+            PixOLine feels slow
+          </h3>
 
           <p>
             Close applications running in the background and restart
@@ -1252,7 +1641,10 @@
             require additional device resources.
           </p>
 
-          <h3>An image will not import</h3>
+
+          <h3>
+            An image will not import
+          </h3>
 
           <p>
             Check that the image exists on your device and that
@@ -1260,7 +1652,10 @@
             to determine whether the problem is specific to the file.
           </p>
 
-          <h3>My project will not open</h3>
+
+          <h3>
+            My project will not open
+          </h3>
 
           <p>
             Verify that the project file has not been moved, renamed,
@@ -1268,7 +1663,10 @@
             copy.
           </p>
 
-          <h3>Export is not working</h3>
+
+          <h3>
+            Export is not working
+          </h3>
 
           <p>
             Check available storage and application permissions.
@@ -1276,13 +1674,25 @@
             whether the issue is related to project complexity.
           </p>
 
+
           <div class="notice">
 
             <p>
-              <strong>Still need help?</strong>
-              Visit our <a href="support.html">Support</a> page or
-              <a href="contact.html">Contact Us</a> page for additional
-              assistance.
+
+              <strong>
+                Still need help?
+              </strong>
+
+              Visit our
+              <a href="support.html">
+                Support
+              </a>
+              page or
+              <a href="contact.html">
+                Contact Us
+              </a>
+              page for additional assistance.
+
             </p>
 
           </div>
@@ -1290,11 +1700,18 @@
         </section>
 
 
-        <!-- CONCLUSION -->
+        <!-- =========================
+             12. NEXT STEPS
+        ========================= -->
 
-        <section class="docs-section" id="next-steps">
+        <section
+          class="docs-section"
+          id="next-steps"
+        >
 
-          <h2>12. Next Steps</h2>
+          <h2>
+            12. Next Steps
+          </h2>
 
           <p>
             You now have an overview of the basic PixOLine workflow.
@@ -1302,26 +1719,43 @@
             tools and create small projects.
           </p>
 
+
           <ul>
 
-            <li>Create a simple social media graphic.</li>
+            <li>
+              Create a simple social media graphic.
+            </li>
 
-            <li>Experiment with different fonts and colors.</li>
+            <li>
+              Experiment with different fonts and colors.
+            </li>
 
-            <li>Import an image and combine it with text.</li>
+            <li>
+              Import an image and combine it with text.
+            </li>
 
-            <li>Try arranging multiple layers.</li>
+            <li>
+              Try arranging multiple layers.
+            </li>
 
-            <li>Export your finished project.</li>
+            <li>
+              Export your finished project.
+            </li>
 
           </ul>
+
 
           <div class="notice success-notice">
 
             <p>
-              <strong>Happy creating!</strong>
+
+              <strong>
+                Happy creating!
+              </strong>
+
               Explore PixOLine, experiment with the tools, and turn
               your ideas into finished designs.
+
             </p>
 
           </div>
@@ -1336,15 +1770,21 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
     <div class="footer-links">
 
-      <a href="about.html">About</a>
+      <a href="about.html">
+        About
+      </a>
 
-      <a href="support.html">Support</a>
+      <a href="support.html">
+        Support
+      </a>
 
       <a href="privacy-and-policy.html">
         Privacy Policy
@@ -1365,7 +1805,6 @@
     </p>
 
   </footer>
-
 
 </body>
 </html>
