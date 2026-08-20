@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description"
-        content="PixOLine Support. Get help and support for the PixOLine graphic design application.">
+        content="PixOLine Support. Get help with the PixOLine graphic design application, projects, exporting, permissions, and common issues.">
 
   <title>Support — PixOLine</title>
 
@@ -25,9 +26,6 @@
       background: #0d1117;
       color: #c9d1d9;
       line-height: 1.7;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
     header {
@@ -60,14 +58,140 @@
       color: #58a6ff;
     }
 
-    /*
-      Main content intentionally omitted.
-      Support page currently contains only the shared
-      PixOLine header and footer.
-    */
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 20px 90px;
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 40px 20px 55px;
+      background:
+        radial-gradient(circle at top, #172554 0%, transparent 45%),
+        linear-gradient(135deg, #0d1117, #161b22);
+      border: 1px solid #30363d;
+      border-radius: 14px;
+      margin-bottom: 35px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 16px;
+      margin-bottom: 20px;
+      border: 1px solid #30363d;
+      border-radius: 30px;
+      background: #161b22;
+      color: #58a6ff;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .page-header h1 {
+      color: #fff;
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .page-header p {
+      color: #8b949e;
+      font-size: 16px;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .support-content {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 40px;
+    }
+
+    .support-content h2 {
+      color: #fff;
+      font-size: 25px;
+      margin-top: 35px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .support-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .support-content h3 {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .support-content p {
+      color: #8b949e;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .support-content ul {
+      margin: 10px 0 20px 25px;
+      color: #8b949e;
+    }
+
+    .support-content li {
+      margin-bottom: 8px;
+    }
+
+    .support-content strong {
+      color: #c9d1d9;
+    }
+
+    .notice {
+      background: #111827;
+      border: 1px solid #30363d;
+      border-left: 4px solid #58a6ff;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 25px 0;
+    }
+
+    .notice p {
+      margin: 0;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin: 25px 0;
+    }
+
+    .support-card {
+      background: #111827;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 22px;
+    }
+
+    .support-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .support-card p {
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
 
     footer {
-      margin-top: auto;
       text-align: center;
       padding: 35px 20px;
       background: #161b22;
@@ -104,6 +228,39 @@
         margin: 0 7px;
       }
 
+      main {
+        padding: 45px 15px 60px;
+      }
+
+      .page-header {
+        padding: 35px 15px 40px;
+      }
+
+      .page-header h1 {
+        font-size: 38px;
+      }
+
+      .page-header p {
+        font-size: 15px;
+      }
+
+      .support-content {
+        padding: 25px 20px;
+      }
+
+      .support-content h2 {
+        font-size: 22px;
+      }
+
+      .support-content p,
+      .support-content li {
+        font-size: 15px;
+      }
+
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+
       .footer-links a {
         display: block;
         margin: 8px 0;
@@ -134,7 +291,284 @@
   </header>
 
 
-  <!-- SUPPORT CONTENT WILL BE ADDED HERE LATER -->
+  <!-- SUPPORT -->
+
+  <main>
+
+    <section class="page-header">
+
+      <div class="badge">Help & Support</div>
+
+      <h1>PixOLine Support</h1>
+
+      <p>
+        Need help with PixOLine? Find answers to common questions,
+        learn how to use the app, and get assistance with your
+        projects and designs.
+      </p>
+
+    </section>
+
+
+    <article class="support-content">
+
+      <div class="notice">
+        <p>
+          <strong>Welcome to PixOLine Support.</strong>
+          PixOLine is designed to make graphic design simple and
+          accessible on Android phones and tablets. Browse the
+          information below for help with common questions and issues.
+        </p>
+      </div>
+
+
+      <h2>1. Getting Started</h2>
+
+      <p>
+        PixOLine allows you to create graphics, illustrations, posters,
+        banners, social media designs, and other creative projects
+        directly from your Android device.
+      </p>
+
+      <p>
+        To get started, install PixOLine and create a new project.
+        You can then add text, images, shapes, icons, colors, and other
+        design elements to your canvas.
+      </p>
+
+
+      <div class="support-grid">
+
+        <div class="support-card">
+          <h3>🖌 Create a Design</h3>
+          <p>
+            Start a new project and use the available design tools to
+            create your artwork.
+          </p>
+        </div>
+
+        <div class="support-card">
+          <h3>📁 Open a Project</h3>
+          <p>
+            Open a previously saved PixOLine project and continue
+            editing your design.
+          </p>
+        </div>
+
+        <div class="support-card">
+          <h3>🖼 Import Images</h3>
+          <p>
+            Import supported images from your device and use them
+            within your creative projects.
+          </p>
+        </div>
+
+        <div class="support-card">
+          <h3>📤 Export Your Work</h3>
+          <p>
+            Export finished designs into supported formats for saving
+            or sharing.
+          </p>
+        </div>
+
+      </div>
+
+
+      <h2>2. Saving Projects</h2>
+
+      <p>
+        PixOLine supports saving your projects so you can continue
+        working on them later.
+      </p>
+
+      <p>
+        Projects saved on your device are subject to the storage
+        permissions and file management provided by the Android
+        operating system.
+      </p>
+
+      <p>
+        We recommend keeping backup copies of important projects,
+        especially before making significant changes to your device
+        or operating system.
+      </p>
+
+
+      <h2>3. Importing Images</h2>
+
+      <p>
+        You can import images from your device when creating or editing
+        a design.
+      </p>
+
+      <ul>
+        <li>Make sure PixOLine has the required file or media permission.</li>
+        <li>Use supported image formats whenever possible.</li>
+        <li>Check that the image still exists on your device.</li>
+        <li>For large images, allow additional time for processing.</li>
+      </ul>
+
+
+      <h2>4. Exporting Designs</h2>
+
+      <p>
+        When your design is complete, you can export it using one of
+        the supported output formats available in PixOLine.
+      </p>
+
+      <p>
+        Depending on the version of the application and project type,
+        available export options may include formats such as PNG, JPG,
+        or PDF.
+      </p>
+
+      <div class="notice">
+        <p>
+          <strong>Tip:</strong>
+          If an exported image does not appear immediately, check your
+          device's Downloads, Pictures, Documents, or the folder
+          selected during the export process.
+        </p>
+      </div>
+
+
+      <h2>5. Permissions</h2>
+
+      <p>
+        Some PixOLine features may require access to files, photos,
+        media, or other device resources.
+      </p>
+
+      <p>
+        If a feature does not work as expected, check the PixOLine
+        permissions in your Android device settings and make sure the
+        required permission has been granted.
+      </p>
+
+      <p>
+        You can change application permissions at any time through
+        Android settings.
+      </p>
+
+
+      <h2>6. Common Issues</h2>
+
+      <h3>PixOLine is running slowly</h3>
+
+      <p>
+        Try closing other applications, restarting your device, and
+        reopening PixOLine. Very large projects or images may require
+        additional device resources.
+      </p>
+
+      <h3>My project is not opening</h3>
+
+      <p>
+        Make sure the project file has not been moved, renamed, deleted,
+        or damaged. If you have a backup copy, try opening the backup
+        project.
+      </p>
+
+      <h3>Images are not importing</h3>
+
+      <p>
+        Check the application's permissions and verify that the image
+        file is accessible from your device. You can also try importing
+        another image to determine whether the problem is specific to
+        one file.
+      </p>
+
+      <h3>Export is not working</h3>
+
+      <p>
+        Make sure your device has sufficient available storage and that
+        PixOLine has the required permissions. Try exporting a smaller
+        or simpler project if the issue continues.
+      </p>
+
+
+      <h2>7. Updating PixOLine</h2>
+
+      <p>
+        Keeping PixOLine updated can provide bug fixes, performance
+        improvements, new features, and compatibility improvements.
+      </p>
+
+      <p>
+        If you installed PixOLine through Google Play, check the
+        application's Google Play page for available updates.
+      </p>
+
+
+      <h2>8. Frequently Asked Questions</h2>
+
+      <h3>Do I need an account to use PixOLine?</h3>
+
+      <p>
+        No. PixOLine is designed so that you can use its core graphic
+        design features without creating an account.
+      </p>
+
+      <h3>Can I use PixOLine offline?</h3>
+
+      <p>
+        Many core design functions are intended to work locally on your
+        device. Certain features or services may require an internet
+        connection.
+      </p>
+
+      <h3>Where are my projects stored?</h3>
+
+      <p>
+        Projects that you save locally are stored according to the
+        location and storage options selected through PixOLine and the
+        Android operating system.
+      </p>
+
+      <h3>Can I share my designs?</h3>
+
+      <p>
+        Yes. You can export your designs and use the sharing options
+        provided by your device and supported applications.
+      </p>
+
+
+      <h2>9. Still Need Help?</h2>
+
+      <p>
+        If you cannot find an answer to your question, please contact
+        the PixOLine team with as much useful information as possible.
+      </p>
+
+      <p>
+        When contacting support, it can be helpful to include your
+        PixOLine version, Android version, device model, and a short
+        description of the problem.
+      </p>
+
+      <p>
+        Visit our
+        <a href="contact.html">Contact Us</a>
+        page for available contact options.
+      </p>
+
+
+      <h2>10. Support Information</h2>
+
+      <p>
+        PixOLine support information may be updated as new application
+        versions and features become available. Please check this page
+        periodically for updated troubleshooting information.
+      </p>
+
+      <p>
+        We appreciate your feedback and suggestions as we continue to
+        improve PixOLine.
+      </p>
+
+    </article>
+
+  </main>
 
 
   <!-- FOOTER -->
@@ -157,3 +591,4 @@
 
 </body>
 </html>
+```
