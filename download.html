@@ -1,1 +1,583 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta name="description"
+        content="Download PixOLine for Android. Get the PixOLine graphic design app and start creating designs, illustrations, posters, banners, and more.">
+
+  <title>Download — PixOLine</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      padding: 10px 8% 8px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo img {
+      display: block;
+      max-height: 42px;
+      width: auto;
+    }
+
+    nav a {
+      color: #c9d1d9;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 20px 90px;
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 55px 20px 60px;
+      background:
+        radial-gradient(circle at top, #172554 0%, transparent 45%),
+        linear-gradient(135deg, #0d1117, #161b22);
+      border: 1px solid #30363d;
+      border-radius: 14px;
+      margin-bottom: 35px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 16px;
+      margin-bottom: 20px;
+      border: 1px solid #30363d;
+      border-radius: 30px;
+      background: #161b22;
+      color: #58a6ff;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .page-header h1 {
+      color: #fff;
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .page-header p {
+      color: #8b949e;
+      font-size: 16px;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .download-content {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 40px;
+    }
+
+    .download-box {
+      text-align: center;
+      background: #111827;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 40px 25px;
+      margin-bottom: 35px;
+    }
+
+    .app-icon {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      border-radius: 22px;
+      margin-bottom: 20px;
+    }
+
+    .download-box h2 {
+      color: #fff;
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .download-box p {
+      color: #8b949e;
+      font-size: 16px;
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    .download-button {
+      display: inline-block;
+      padding: 13px 28px;
+      background: #238636;
+      border: 1px solid #2ea043;
+      border-radius: 8px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .download-button:hover {
+      background: #2ea043;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .secondary-button {
+      background: #21262d;
+      border-color: #30363d;
+      margin-left: 8px;
+    }
+
+    .secondary-button:hover {
+      background: #30363d;
+    }
+
+    .download-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 30px 0;
+    }
+
+    .info-card {
+      background: #111827;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .info-card .icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .info-card h3 {
+      color: #fff;
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    .info-card p {
+      color: #8b949e;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .download-content h2 {
+      color: #fff;
+      font-size: 25px;
+      margin-top: 35px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .download-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .download-content h3 {
+      color: #fff;
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    .download-content p {
+      color: #8b949e;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .download-content ul {
+      margin: 10px 0 20px 25px;
+      color: #8b949e;
+    }
+
+    .download-content li {
+      margin-bottom: 8px;
+    }
+
+    .download-content strong {
+      color: #c9d1d9;
+    }
+
+    .notice {
+      background: #111827;
+      border: 1px solid #30363d;
+      border-left: 4px solid #58a6ff;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 25px 0;
+    }
+
+    .notice p {
+      margin: 0;
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: #161b22;
+      border-top: 1px solid #30363d;
+      color: #8b949e;
+    }
+
+    footer a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    .footer-links {
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      main {
+        padding: 45px 15px 60px;
+      }
+
+      .page-header {
+        padding: 35px 15px 40px;
+      }
+
+      .page-header h1 {
+        font-size: 38px;
+      }
+
+      .page-header p {
+        font-size: 15px;
+      }
+
+      .download-content {
+        padding: 25px 20px;
+      }
+
+      .download-box {
+        padding: 30px 18px;
+      }
+
+      .download-info {
+        grid-template-columns: 1fr;
+      }
+
+      .download-button {
+        display: block;
+        margin: 8px 0;
+      }
+
+      .secondary-button {
+        margin-left: 0;
+      }
+
+      .download-content h2 {
+        font-size: 22px;
+      }
+
+      .download-content p,
+      .download-content li {
+        font-size: 15px;
+      }
+
+      .footer-links a {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      <a href="https://pluginfotech.github.io/pixoline/" title="PixOLine">
+        <img src="pixoline_logo_white.png" alt="PixOLine">
+      </a>
+    </div>
+
+    <nav>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+      <a href="learn.html">Learn</a>
+      <a href="download.html">Download</a>
+    </nav>
+
+  </header>
+
+
+  <!-- DOWNLOAD -->
+
+  <main>
+
+    <section class="page-header">
+
+      <div class="badge">Android App</div>
+
+      <h1>Download PixOLine</h1>
+
+      <p>
+        Get PixOLine for Android and start creating beautiful graphics,
+        illustrations, posters, banners, social media designs, and more.
+      </p>
+
+    </section>
+
+
+    <article class="download-content">
+
+      <section class="download-box">
+
+        <!-- Replace with your actual app icon if available -->
+        <img
+          src="pixoline_logo_white.png"
+          alt="PixOLine App"
+          class="app-icon"
+        >
+
+        <h2>PixOLine for Android</h2>
+
+        <p>
+          A powerful and easy-to-use graphic design application for
+          Android phones and tablets.
+        </p>
+
+        <!-- Replace this URL with your actual Google Play Store URL -->
+        <a
+          href="YOUR_GOOGLE_PLAY_STORE_URL"
+          class="download-button"
+          target="_blank"
+          rel="noopener"
+        >
+          Download from Google Play
+        </a>
+
+        <a
+          href="features.html"
+          class="download-button secondary-button"
+        >
+          View Features
+        </a>
+
+      </section>
+
+
+      <div class="download-info">
+
+        <div class="info-card">
+          <div class="icon">📱</div>
+          <h3>Android</h3>
+          <p>
+            Designed for Android phones and tablets.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon">🎨</div>
+          <h3>Creative Tools</h3>
+          <p>
+            Create graphics, illustrations, posters, and more.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon">🆓</div>
+          <h3>Easy to Get Started</h3>
+          <p>
+            Install the app and start creating your designs.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="notice">
+        <p>
+          <strong>Official Download:</strong>
+          For the safest installation and the latest version of PixOLine,
+          we recommend downloading the application from the official
+          Google Play Store listing.
+        </p>
+      </div>
+
+
+      <h2>Why Download PixOLine?</h2>
+
+      <p>
+        PixOLine brings essential graphic design tools directly to your
+        Android device. Whether you are creating a quick social media
+        graphic or working on a larger creative project, PixOLine gives
+        you tools to build and edit your designs.
+      </p>
+
+      <ul>
+        <li>Create graphics and illustrations.</li>
+        <li>Design posters, banners, and social media content.</li>
+        <li>Add text, shapes, images, colors, and other design elements.</li>
+        <li>Work with your projects directly on your Android device.</li>
+        <li>Export finished designs for saving and sharing.</li>
+      </ul>
+
+
+      <h2>How to Download</h2>
+
+      <h3>Step 1 — Open Google Play</h3>
+
+      <p>
+        Tap the <strong>Download from Google Play</strong> button above
+        to open the official PixOLine application listing.
+      </p>
+
+      <h3>Step 2 — Install PixOLine</h3>
+
+      <p>
+        On the Google Play page, tap the <strong>Install</strong> button
+        and wait for the application to finish downloading.
+      </p>
+
+      <h3>Step 3 — Start Creating</h3>
+
+      <p>
+        Once installation is complete, open PixOLine from your device
+        and start creating your first design.
+      </p>
+
+
+      <h2>System Requirements</h2>
+
+      <p>
+        PixOLine is intended for Android phones and tablets. The actual
+        performance of the application may vary depending on your
+        device hardware, Android version, available storage, and the
+        complexity of your projects.
+      </p>
+
+      <ul>
+        <li>Compatible Android device.</li>
+        <li>Sufficient free storage for the application and projects.</li>
+        <li>Additional storage may be required for imported images and saved designs.</li>
+        <li>An internet connection may be required for downloading or updating the application.</li>
+      </ul>
+
+
+      <h2>Keep PixOLine Updated</h2>
+
+      <p>
+        We recommend keeping PixOLine updated to receive the latest
+        improvements, bug fixes, performance updates, and new features.
+      </p>
+
+      <p>
+        If you installed PixOLine through Google Play, you can check
+        for available updates directly from the application's Play
+        Store page.
+      </p>
+
+
+      <h2>Need Help?</h2>
+
+      <p>
+        Having trouble installing or using PixOLine? Visit our
+        <a href="support.html">Support</a> page for troubleshooting
+        information and answers to common questions.
+      </p>
+
+      <p>
+        You can also visit our
+        <a href="contact.html">Contact Us</a>
+        page if you need additional assistance.
+      </p>
+
+    </article>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+      <a href="privacy-and-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms of Service</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+    <p>
+      © 2026 PixOLine. All rights reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
+```
