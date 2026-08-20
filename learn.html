@@ -1,1 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta name="description"
+        content="Learn how to use PixOLine with step-by-step tutorials and documentation for creating, editing, and exporting graphic designs on Android.">
+
+  <title>Learn — PixOLine</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      padding: 10px 8% 8px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo img {
+      display: block;
+      max-height: 42px;
+      width: auto;
+    }
+
+    nav a {
+      color: #c9d1d9;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 20px 90px;
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 55px 20px 60px;
+
+      background:
+        radial-gradient(circle at top, #172554 0%, transparent 45%),
+        linear-gradient(135deg, #0d1117, #161b22);
+
+      border: 1px solid #30363d;
+      border-radius: 14px;
+      margin-bottom: 35px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 16px;
+      margin-bottom: 20px;
+
+      border: 1px solid #30363d;
+      border-radius: 30px;
+
+      background: #161b22;
+      color: #58a6ff;
+
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .page-header h1 {
+      color: #fff;
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .page-header p {
+      color: #8b949e;
+      font-size: 16px;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    /* DOCUMENTATION */
+
+    .docs-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    /* SIDEBAR */
+
+    .docs-sidebar {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 20px;
+      position: sticky;
+      top: 85px;
+    }
+
+    .docs-sidebar h2 {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 15px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .docs-sidebar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .docs-sidebar li {
+      margin-bottom: 5px;
+    }
+
+    .docs-sidebar a {
+      display: block;
+      color: #8b949e;
+      text-decoration: none;
+      padding: 9px 12px;
+      border-radius: 7px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .docs-sidebar a:hover {
+      color: #fff;
+      background: #21262d;
+    }
+
+    .docs-sidebar a.active {
+      color: #58a6ff;
+      background: #172554;
+    }
+
+    .sidebar-label {
+      color: #6e7681;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      margin: 20px 12px 7px;
+    }
+
+    /* DOCUMENT CONTENT */
+
+    .docs-content {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 40px;
+      min-width: 0;
+    }
+
+    .docs-section {
+      scroll-margin-top: 100px;
+      padding-bottom: 35px;
+      margin-bottom: 35px;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .docs-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .docs-content h2 {
+      color: #fff;
+      font-size: 27px;
+      line-height: 1.3;
+      margin-bottom: 15px;
+    }
+
+    .docs-content h3 {
+      color: #fff;
+      font-size: 19px;
+      margin-top: 25px;
+      margin-bottom: 8px;
+    }
+
+    .docs-content p {
+      color: #8b949e;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .docs-content ul,
+    .docs-content ol {
+      color: #8b949e;
+      margin: 10px 0 20px 25px;
+    }
+
+    .docs-content li {
+      margin-bottom: 8px;
+    }
+
+    .docs-content strong {
+      color: #c9d1d9;
+    }
+
+    /* INTRO */
+
+    .docs-intro {
+      background: #111827;
+      border: 1px solid #30363d;
+      border-left: 4px solid #58a6ff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .docs-intro p {
+      margin: 0;
+    }
+
+    /* STEPS */
+
+    .step {
+      display: flex;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .step-number {
+      flex: 0 0 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #238636;
+      border: 1px solid #2ea043;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-content h3 {
+      margin-top: 0;
+    }
+
+    .step-content p {
+      margin-bottom: 0;
+    }
+
+    /* INFO CARDS */
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin: 25px 0;
+    }
+
+    .info-card {
+      background: #111827;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 22px;
+    }
+
+    .info-card .icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .info-card h3 {
+      color: #fff;
+      font-size: 17px;
+      margin: 0 0 6px;
+    }
+
+    .info-card p {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* CODE / UI EXAMPLE */
+
+    .code-example {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 20px 0;
+      overflow-x: auto;
+    }
+
+    .code-example code {
+      color: #79c0ff;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 14px;
+    }
+
+    /* NOTICE */
+
+    .notice {
+      background: #111827;
+      border: 1px solid #30363d;
+      border-left: 4px solid #58a6ff;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 25px 0;
+    }
+
+    .notice p {
+      margin: 0;
+    }
+
+    .success-notice {
+      border-left-color: #2ea043;
+    }
+
+    .warning-notice {
+      border-left-color: #d29922;
+    }
+
+    /* TABLE */
+
+    .docs-table-wrapper {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    .docs-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #111827;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .docs-table th,
+    .docs-table td {
+      text-align: left;
+      padding: 12px 15px;
+      border-bottom: 1px solid #30363d;
+      font-size: 14px;
+    }
+
+    .docs-table th {
+      color: #fff;
+      background: #21262d;
+    }
+
+    .docs-table td {
+      color: #8b949e;
+    }
+
+    .docs-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: #161b22;
+      border-top: 1px solid #30363d;
+      color: #8b949e;
+    }
+
+    footer a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    .footer-links {
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      main {
+        padding: 45px 15px 60px;
+      }
+
+      .page-header {
+        padding: 35px 15px 40px;
+      }
+
+      .page-header h1 {
+        font-size: 38px;
+      }
+
+      .page-header p {
+        font-size: 15px;
+      }
+
+      .docs-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .docs-sidebar {
+        position: static;
+      }
+
+      .docs-sidebar ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+      }
+
+      .sidebar-label {
+        margin-top: 15px;
+      }
+
+      .docs-content {
+        padding: 25px 20px;
+      }
+
+      .docs-content h2 {
+        font-size: 23px;
+      }
+
+      .docs-content p,
+      .docs-content li {
+        font-size: 15px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-links a {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .docs-sidebar ul {
+        grid-template-columns: 1fr;
+      }
+
+      .step {
+        gap: 10px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      <a href="https://pluginfotech.github.io/pixoline/" title="PixOLine">
+        <img src="pixoline_logo_white.png" alt="PixOLine">
+      </a>
+    </div>
+
+    <nav>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+      <a href="learn.html">Learn</a>
+      <a href="download.html">Download</a>
+    </nav>
+
+  </header>
+
+
+  <!-- LEARN / DOCUMENTATION -->
+
+  <main>
+
+    <section class="page-header">
+
+      <div class="badge">Tutorials & Documentation</div>
+
+      <h1>Learn PixOLine</h1>
+
+      <p>
+        Learn how to use PixOLine step by step. Explore our tutorials
+        to create projects, work with design elements, edit your
+        artwork, and export your finished designs.
+      </p>
+
+    </section>
+
+
+    <div class="docs-layout">
+
+
+      <!-- LEFT SIDEBAR -->
+
+      <aside class="docs-sidebar">
+
+        <h2>PixOLine Tutorials</h2>
+
+        <div class="sidebar-label">
+          Getting Started
+        </div>
+
+        <ul>
+
+          <li>
+            <a href="#introduction" class="active">
+              Introduction
+            </a>
+          </li>
+
+          <li>
+            <a href="#create-project">
+              Create a Project
+            </a>
+          </li>
+
+          <li>
+            <a href="#interface">
+              Understanding the Interface
+            </a>
+          </li>
+
+        </ul>
+
+
+        <div class="sidebar-label">
+          Design Tools
+        </div>
+
+        <ul>
+
+          <li>
+            <a href="#text">
+              Add Text
+            </a>
+          </li>
+
+          <li>
+            <a href="#images">
+              Add Images
+            </a>
+          </li>
+
+          <li>
+            <a href="#shapes">
+              Shapes & Colors
+            </a>
+          </li>
+
+          <li>
+            <a href="#layers">
+              Working With Layers
+            </a>
+          </li>
+
+        </ul>
+
+
+        <div class="sidebar-label">
+          Finish Your Design
+        </div>
+
+        <ul>
+
+          <li>
+            <a href="#save">
+              Save a Project
+            </a>
+          </li>
+
+          <li>
+            <a href="#export">
+              Export Your Design
+            </a>
+          </li>
+
+          <li>
+            <a href="#share">
+              Share Your Design
+            </a>
+          </li>
+
+        </ul>
+
+
+        <div class="sidebar-label">
+          More Help
+        </div>
+
+        <ul>
+
+          <li>
+            <a href="#troubleshooting">
+              Troubleshooting
+            </a>
+          </li>
+
+          <li>
+            <a href="support.html">
+              Support
+            </a>
+          </li>
+
+        </ul>
+
+      </aside>
+
+
+      <!-- RIGHT DOCUMENTATION -->
+
+      <article class="docs-content">
+
+
+        <!-- INTRODUCTION -->
+
+        <section class="docs-section" id="introduction">
+
+          <h2>1. Introduction</h2>
+
+          <div class="docs-intro">
+
+            <p>
+              <strong>Welcome to the PixOLine documentation.</strong>
+              This guide explains the basic workflow for creating
+              and editing designs using PixOLine on Android.
+            </p>
+
+          </div>
+
+          <p>
+            PixOLine provides a simple workspace where you can combine
+            text, images, shapes, colors, and other visual elements
+            to create your own designs.
+          </p>
+
+          <p>
+            If you are using PixOLine for the first time, we recommend
+            following these tutorials in order.
+          </p>
+
+          <div class="info-grid">
+
+            <div class="info-card">
+
+              <div class="icon">📱</div>
+
+              <h3>Android Workspace</h3>
+
+              <p>
+                Create and edit your projects directly from your
+                Android phone or tablet.
+              </p>
+
+            </div>
+
+            <div class="info-card">
+
+              <div class="icon">🎨</div>
+
+              <h3>Creative Tools</h3>
+
+              <p>
+                Add text, images, shapes, colors, and other elements
+                to your projects.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- CREATE PROJECT -->
+
+        <section class="docs-section" id="create-project">
+
+          <h2>2. Create a New Project</h2>
+
+          <p>
+            The first step in creating a design is to start a new
+            project. A project acts as the workspace for your artwork.
+          </p>
+
+          <div class="step">
+
+            <div class="step-number">1</div>
+
+            <div class="step-content">
+
+              <h3>Open PixOLine</h3>
+
+              <p>
+                Launch PixOLine from your Android device and open the
+                project screen.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="step">
+
+            <div class="step-number">2</div>
+
+            <div class="step-content">
+
+              <h3>Select New Project</h3>
+
+              <p>
+                Tap the option for creating a new project. You may
+                then be asked to select your preferred canvas size.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="step">
+
+            <div class="step-number">3</div>
+
+            <div class="step-content">
+
+              <h3>Choose a Canvas</h3>
+
+              <p>
+                Select an appropriate canvas size for your project.
+                Choose a larger canvas when creating designs that
+                require more detail.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="notice">
+
+            <p>
+              <strong>Tip:</strong>
+              Think about where your design will be used before
+              choosing the canvas size. A social media post, banner,
+              and printable poster may require different dimensions.
+            </p>
+
+          </div>
+
+        </section>
+
+
+        <!-- INTERFACE -->
+
+        <section class="docs-section" id="interface">
+
+          <h2>3. Understanding the Interface</h2>
+
+          <p>
+            The PixOLine workspace contains several areas that help
+            you create and edit your design.
+          </p>
+
+          <div class="docs-table-wrapper">
+
+            <table class="docs-table">
+
+              <thead>
+
+                <tr>
+                  <th>Area</th>
+                  <th>Purpose</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Canvas</td>
+                  <td>
+                    The main area where your design is created.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Toolbar</td>
+                  <td>
+                    Provides access to common editing and design tools.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Layers</td>
+                  <td>
+                    Helps organize and manage individual design elements.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Properties</td>
+                  <td>
+                    Allows you to adjust selected elements.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+
+        <!-- TEXT -->
+
+        <section class="docs-section" id="text">
+
+          <h2>4. Adding Text</h2>
+
+          <p>
+            Text is useful for titles, captions, labels, announcements,
+            posters, and many other types of designs.
+          </p>
+
+          <h3>Add a Text Element</h3>
+
+          <div class="step">
+
+            <div class="step-number">1</div>
+
+            <div class="step-content">
+
+              <p>
+                Select the <strong>Text</strong> tool from the toolbar.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="step">
+
+            <div class="step-number">2</div>
+
+            <div class="step-content">
+
+              <p>
+                Tap or drag on the canvas to create a text area.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="step">
+
+            <div class="step-number">3</div>
+
+            <div class="step-content">
+
+              <p>
+                Enter your text and adjust the available text settings.
+              </p>
+
+            </div>
+
+          </div>
+
+          <h3>Useful Text Settings</h3>
+
+          <ul>
+
+            <li>Font family and font style.</li>
+
+            <li>Font size.</li>
+
+            <li>Text color.</li>
+
+            <li>Alignment.</li>
+
+            <li>Position and size.</li>
+
+            <li>Spacing and other available formatting options.</li>
+
+          </ul>
+
+        </section>
+
+
+        <!-- IMAGES -->
+
+        <section class="docs-section" id="images">
+
+          <h2>5. Adding Images</h2>
+
+          <p>
+            Images can be imported from your device and placed inside
+            your design.
+          </p>
+
+          <div class="step">
+
+            <div class="step-number">1</div>
+
+            <div class="step-content">
+
+              <h3>Choose Import Image</h3>
+
+              <p>
+                Open the image or media import option from the
+                PixOLine toolbar.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="step">
+
+            <div class="step-number">2</div>
+
+            <div class="step-content">
+
+              <h3>Select an Image</h3>
+
+              <p>
+                Choose an image from your device gallery or supported
+                file location.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="step">
+
+            <div class="step-number">3</div>
+
+            <div class="step-content">
+
+              <h3>Position the Image</h3>
+
+              <p>
+                Resize, move, and position the image according to
+                your design.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="notice warning-notice">
+
+            <p>
+              <strong>Note:</strong>
+              Very large images may require additional memory and
+              processing time on mobile devices.
+            </p>
+
+          </div>
+
+        </section>
+
+
+        <!-- SHAPES -->
+
+        <section class="docs-section" id="shapes">
+
+          <h2>6. Shapes & Colors</h2>
+
+          <p>
+            Shapes can be used to create backgrounds, buttons,
+            decorative elements, borders, and other visual components.
+          </p>
+
+          <h3>Working With Shapes</h3>
+
+          <ul>
+
+            <li>Select the Shapes tool.</li>
+
+            <li>Choose the shape you want to add.</li>
+
+            <li>Place the shape on your canvas.</li>
+
+            <li>Resize or reposition the shape.</li>
+
+            <li>Adjust its color and other available properties.</li>
+
+          </ul>
+
+          <h3>Choosing Colors</h3>
+
+          <p>
+            Use colors that complement the purpose of your design.
+            For example, a promotional graphic may use strong
+            contrasting colors while a professional presentation may
+            benefit from a more restrained palette.
+          </p>
+
+        </section>
+
+
+        <!-- LAYERS -->
+
+        <section class="docs-section" id="layers">
+
+          <h2>7. Working With Layers</h2>
+
+          <p>
+            Layers help organize multiple elements in a project.
+            Understanding layers becomes especially important when
+            working on more complex designs.
+          </p>
+
+          <h3>Layer Order</h3>
+
+          <p>
+            Elements higher in the layer order may appear above
+            elements underneath them. You can change the order when
+            one object needs to appear behind or in front of another.
+          </p>
+
+          <div class="code-example">
+
+            <code>
+              Background → Image → Shape → Text → Decorative Element
+            </code>
+
+          </div>
+
+          <p>
+            A well-organized layer structure can make editing easier
+            and help prevent accidental changes to other elements.
+          </p>
+
+        </section>
+
+
+        <!-- SAVE -->
+
+        <section class="docs-section" id="save">
+
+          <h2>8. Saving a Project</h2>
+
+          <p>
+            Save your project regularly while working so you can
+            continue editing it later.
+          </p>
+
+          <div class="step">
+
+            <div class="step-number">1</div>
+
+            <div class="step-content">
+
+              <p>
+                Open the project menu or save option.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="step">
+
+            <div class="step-number">2</div>
+
+            <div class="step-content">
+
+              <p>
+                Enter a meaningful project name.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="step">
+
+            <div class="step-number">3</div>
+
+            <div class="step-content">
+
+              <p>
+                Confirm the save operation and wait for the project
+                to finish saving.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="notice success-notice">
+
+            <p>
+              <strong>Best Practice:</strong>
+              Keep backup copies of important projects, especially
+              before making major changes to your device.
+            </p>
+
+          </div>
+
+        </section>
+
+
+        <!-- EXPORT -->
+
+        <section class="docs-section" id="export">
+
+          <h2>9. Export Your Design</h2>
+
+          <p>
+            When your design is finished, export it into a supported
+            image or document format.
+          </p>
+
+          <h3>Before Exporting</h3>
+
+          <ul>
+
+            <li>Check that all design elements are positioned correctly.</li>
+
+            <li>Review text for spelling mistakes.</li>
+
+            <li>Make sure images are displayed correctly.</li>
+
+            <li>Confirm that your device has enough available storage.</li>
+
+          </ul>
+
+          <h3>Export Process</h3>
+
+          <p>
+            Open the export option from the project menu, select your
+            preferred output format, and confirm the export.
+          </p>
+
+          <div class="notice">
+
+            <p>
+              <strong>Tip:</strong>
+              If an exported file is difficult to find, check your
+              Downloads, Pictures, Documents, or the folder selected
+              during the export process.
+            </p>
+
+          </div>
+
+        </section>
+
+
+        <!-- SHARE -->
+
+        <section class="docs-section" id="share">
+
+          <h2>10. Share Your Design</h2>
+
+          <p>
+            After exporting your design, you can use Android's sharing
+            options to send your artwork to other applications.
+          </p>
+
+          <p>
+            Depending on your device, you may be able to share your
+            exported design through messaging applications, email,
+            cloud storage, social media applications, or other
+            compatible services.
+          </p>
+
+        </section>
+
+
+        <!-- TROUBLESHOOTING -->
+
+        <section class="docs-section" id="troubleshooting">
+
+          <h2>11. Troubleshooting</h2>
+
+          <h3>PixOLine feels slow</h3>
+
+          <p>
+            Close applications running in the background and restart
+            PixOLine. Large projects and high-resolution images may
+            require additional device resources.
+          </p>
+
+          <h3>An image will not import</h3>
+
+          <p>
+            Check that the image exists on your device and that
+            PixOLine has the required permissions. Try another image
+            to determine whether the problem is specific to the file.
+          </p>
+
+          <h3>My project will not open</h3>
+
+          <p>
+            Verify that the project file has not been moved, renamed,
+            deleted, or damaged. If possible, try opening a backup
+            copy.
+          </p>
+
+          <h3>Export is not working</h3>
+
+          <p>
+            Check available storage and application permissions.
+            Trying a smaller or simpler project can also help identify
+            whether the issue is related to project complexity.
+          </p>
+
+          <div class="notice">
+
+            <p>
+              <strong>Still need help?</strong>
+              Visit our <a href="support.html">Support</a> page or
+              <a href="contact.html">Contact Us</a> page for additional
+              assistance.
+            </p>
+
+          </div>
+
+        </section>
+
+
+        <!-- CONCLUSION -->
+
+        <section class="docs-section" id="next-steps">
+
+          <h2>12. Next Steps</h2>
+
+          <p>
+            You now have an overview of the basic PixOLine workflow.
+            The best way to learn is to experiment with different
+            tools and create small projects.
+          </p>
+
+          <ul>
+
+            <li>Create a simple social media graphic.</li>
+
+            <li>Experiment with different fonts and colors.</li>
+
+            <li>Import an image and combine it with text.</li>
+
+            <li>Try arranging multiple layers.</li>
+
+            <li>Export your finished project.</li>
+
+          </ul>
+
+          <div class="notice success-notice">
+
+            <p>
+              <strong>Happy creating!</strong>
+              Explore PixOLine, experiment with the tools, and turn
+              your ideas into finished designs.
+            </p>
+
+          </div>
+
+        </section>
+
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-links">
+
+      <a href="about.html">About</a>
+
+      <a href="support.html">Support</a>
+
+      <a href="privacy-and-policy.html">
+        Privacy Policy
+      </a>
+
+      <a href="terms-and-conditions.html">
+        Terms of Service
+      </a>
+
+      <a href="contact.html">
+        Contact Us
+      </a>
+
+    </div>
+
+    <p>
+      © 2026 PixOLine. All rights reserved.
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
