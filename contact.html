@@ -1,1 +1,536 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta name="description"
+        content="Contact PixOLine. Get in touch with the PixOLine team for support, feedback, suggestions, and general inquiries.">
+
+  <title>Contact Us — PixOLine</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      padding: 10px 8% 8px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo img {
+      display: block;
+      max-height: 42px;
+      width: auto;
+    }
+
+    nav a {
+      color: #c9d1d9;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 20px 90px;
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 55px 20px 60px;
+      background:
+        radial-gradient(circle at top, #172554 0%, transparent 45%),
+        linear-gradient(135deg, #0d1117, #161b22);
+      border: 1px solid #30363d;
+      border-radius: 14px;
+      margin-bottom: 35px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 16px;
+      margin-bottom: 20px;
+      border: 1px solid #30363d;
+      border-radius: 30px;
+      background: #161b22;
+      color: #58a6ff;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .page-header h1 {
+      color: #fff;
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .page-header p {
+      color: #8b949e;
+      font-size: 16px;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .contact-content {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 40px;
+    }
+
+    .contact-intro {
+      background: #111827;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .contact-intro h2 {
+      color: #fff;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .contact-intro p {
+      color: #8b949e;
+      font-size: 16px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .contact-info {
+      background: #111827;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .contact-info h2,
+    .form-container h2 {
+      color: #fff;
+      font-size: 23px;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .contact-info p {
+      color: #8b949e;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .contact-item {
+      padding: 15px 0;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .contact-item h3 {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .contact-item p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .form-container {
+      background: #111827;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    /*
+      GOOGLE FORM AREA
+
+      Replace the div below with your Google Forms iframe.
+
+      Example:
+
+      <iframe
+        src="YOUR_GOOGLE_FORM_URL"
+        width="100%"
+        height="900"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">
+        Loading…
+      </iframe>
+    */
+
+    .google-form {
+      width: 100%;
+      min-height: 700px;
+      background: #0d1117;
+      border: 1px dashed #30363d;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .google-form-placeholder {
+      max-width: 500px;
+    }
+
+    .google-form-placeholder .form-icon {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .google-form-placeholder h3 {
+      color: #fff;
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .google-form-placeholder p {
+      color: #8b949e;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .notice {
+      background: #111827;
+      border: 1px solid #30363d;
+      border-left: 4px solid #58a6ff;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-top: 30px;
+    }
+
+    .notice p {
+      color: #8b949e;
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .notice strong {
+      color: #c9d1d9;
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: #161b22;
+      border-top: 1px solid #30363d;
+      color: #8b949e;
+    }
+
+    footer a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    .footer-links {
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      main {
+        padding: 45px 15px 60px;
+      }
+
+      .page-header {
+        padding: 35px 15px 40px;
+      }
+
+      .page-header h1 {
+        font-size: 38px;
+      }
+
+      .page-header p {
+        font-size: 15px;
+      }
+
+      .contact-content {
+        padding: 25px 20px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-intro {
+        padding: 25px 18px;
+      }
+
+      .form-container,
+      .contact-info {
+        padding: 20px;
+      }
+
+      .google-form {
+        min-height: 650px;
+      }
+
+      .footer-links a {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      <a href="https://pluginfotech.github.io/pixoline/" title="PixOLine">
+        <img src="pixoline_logo_white.png" alt="PixOLine">
+      </a>
+    </div>
+
+    <nav>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+      <a href="learn.html">Learn</a>
+      <a href="download.html">Download</a>
+    </nav>
+
+  </header>
+
+
+  <!-- CONTACT US -->
+
+  <main>
+
+    <section class="page-header">
+
+      <div class="badge">Get In Touch</div>
+
+      <h1>Contact Us</h1>
+
+      <p>
+        Have a question, suggestion, or need help with PixOLine?
+        Send us a message and we'll be happy to hear from you.
+      </p>
+
+    </section>
+
+
+    <article class="contact-content">
+
+      <section class="contact-intro">
+
+        <h2>We'd Love to Hear From You</h2>
+
+        <p>
+          Whether you need help with the app, want to report an issue,
+          have a feature suggestion, or simply want to share your
+          feedback, please use the form below to contact the PixOLine team.
+        </p>
+
+      </section>
+
+
+      <div class="contact-grid">
+
+
+        <!-- CONTACT INFORMATION -->
+
+        <section class="contact-info">
+
+          <h2>How Can We Help?</h2>
+
+          <p>
+            Choose the most appropriate reason for your message so we
+            can better understand your request.
+          </p>
+
+          <div class="contact-item">
+
+            <h3>🛠 App Support</h3>
+
+            <p>
+              Having trouble using PixOLine or experiencing an issue
+              with the application?
+            </p>
+
+          </div>
+
+          <div class="contact-item">
+
+            <h3>💡 Feature Suggestions</h3>
+
+            <p>
+              Have an idea that could make PixOLine better? We'd love
+              to hear your suggestions.
+            </p>
+
+          </div>
+
+          <div class="contact-item">
+
+            <h3>🐞 Report a Bug</h3>
+
+            <p>
+              Let us know about bugs or unexpected behavior so we can
+              investigate them.
+            </p>
+
+          </div>
+
+          <div class="contact-item">
+
+            <h3>💬 General Questions</h3>
+
+            <p>
+              For general questions, feedback, or other inquiries,
+              please use the contact form.
+            </p>
+
+          </div>
+
+        </section>
+
+
+        <!-- GOOGLE FORM -->
+
+        <section class="form-container">
+
+          <h2>Send Us a Message</h2>
+
+          <div class="google-form">
+
+            <div class="google-form-placeholder">
+
+              <div class="form-icon">📝</div>
+
+              <h3>Google Form Goes Here</h3>
+
+              <p>
+                Replace this section with your Google Forms iframe.
+                The form will appear here once you add your Google
+                Form embed code.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+      </div>
+
+
+      <div class="notice">
+
+        <p>
+          <strong>Support Tip:</strong>
+          If you are reporting an app problem, please include your
+          Android version, device model, PixOLine version, and a short
+          description of the issue. Screenshots can also be helpful
+          when explaining a problem.
+        </p>
+
+      </div>
+
+
+    </article>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+      <a href="privacy-and-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms of Service</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+    <p>
+      © 2026 PixOLine. All rights reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
+```
