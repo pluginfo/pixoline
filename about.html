@@ -1,1 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta name="description"
+        content="About PixOLine. Learn more about PixOLine, our mission, our creative design application, and the team behind it.">
+
+  <title>About Us — PixOLine</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      padding: 10px 8% 8px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo img {
+      display: block;
+      max-height: 42px;
+      width: auto;
+    }
+
+    nav a {
+      color: #c9d1d9;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 20px 90px;
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 55px 20px 60px;
+
+      background:
+        radial-gradient(circle at top, #172554 0%, transparent 45%),
+        linear-gradient(135deg, #0d1117, #161b22);
+
+      border: 1px solid #30363d;
+      border-radius: 14px;
+      margin-bottom: 35px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 16px;
+      margin-bottom: 20px;
+
+      border: 1px solid #30363d;
+      border-radius: 30px;
+
+      background: #161b22;
+      color: #58a6ff;
+
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .page-header h1 {
+      color: #fff;
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .page-header p {
+      color: #8b949e;
+      font-size: 16px;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .about-content {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 40px;
+    }
+
+    .about-content h2 {
+      color: #fff;
+      font-size: 25px;
+      margin-top: 35px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .about-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .about-content h3 {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .about-content p {
+      color: #8b949e;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .about-content ul {
+      margin: 10px 0 20px 25px;
+      color: #8b949e;
+    }
+
+    .about-content li {
+      margin-bottom: 8px;
+    }
+
+    .about-content strong {
+      color: #c9d1d9;
+    }
+
+    .notice {
+      background: #111827;
+      border: 1px solid #30363d;
+      border-left: 4px solid #58a6ff;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 25px 0;
+    }
+
+    .notice p {
+      margin: 0;
+    }
+
+    /* TEAM */
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 30px 0;
+    }
+
+    .team-card {
+      background: #111827;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 25px 20px;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .team-card:hover {
+      border-color: #58a6ff;
+      transform: translateY(-3px);
+    }
+
+    .team-avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 15px;
+      border: 2px solid #30363d;
+      background: #21262d;
+    }
+
+    .team-card h3 {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .team-card .designation {
+      color: #58a6ff;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .team-card p {
+      color: #8b949e;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* VALUES */
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 25px 0;
+    }
+
+    .value-card {
+      background: #111827;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 22px;
+    }
+
+    .value-card .icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .value-card h3 {
+      color: #fff;
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    .value-card p {
+      color: #8b949e;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: #161b22;
+      border-top: 1px solid #30363d;
+      color: #8b949e;
+    }
+
+    footer a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    .footer-links {
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      main {
+        padding: 45px 15px 60px;
+      }
+
+      .page-header {
+        padding: 35px 15px 40px;
+      }
+
+      .page-header h1 {
+        font-size: 38px;
+      }
+
+      .page-header p {
+        font-size: 15px;
+      }
+
+      .about-content {
+        padding: 25px 20px;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-content h2 {
+        font-size: 22px;
+      }
+
+      .about-content p,
+      .about-content li {
+        font-size: 15px;
+      }
+
+      .footer-links a {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      <a href="https://pluginfotech.github.io/pixoline/" title="PixOLine">
+        <img src="pixoline_logo_white.png" alt="PixOLine">
+      </a>
+    </div>
+
+    <nav>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+      <a href="learn.html">Learn</a>
+      <a href="download.html">Download</a>
+    </nav>
+
+  </header>
+
+
+  <!-- ABOUT -->
+
+  <main>
+
+    <section class="page-header">
+
+      <div class="badge">About PixOLine</div>
+
+      <h1>Design. Create. Inspire.</h1>
+
+      <p>
+        Learn more about PixOLine, our vision, and the team working
+        to make graphic design more accessible and enjoyable.
+      </p>
+
+    </section>
+
+
+    <article class="about-content">
+
+
+      <div class="notice">
+
+        <p>
+          <strong>Welcome to PixOLine.</strong>
+          PixOLine is a creative graphic design application built to
+          help people create beautiful designs directly from their
+          Android devices.
+        </p>
+
+      </div>
+
+
+      <!-- INTRODUCTION -->
+
+      <h2>1. About PixOLine</h2>
+
+      <p>
+        PixOLine is a graphic design application designed for Android
+        phones and tablets. It provides a collection of creative tools
+        that help users create graphics, illustrations, posters,
+        banners, social media content, and other visual projects.
+      </p>
+
+      <p>
+        Our goal is to make graphic design easier to approach while
+        providing enough flexibility for users to turn their ideas
+        into finished designs.
+      </p>
+
+      <p>
+        Whether you are creating a simple social media post, a poster
+        for an event, a banner, or a more detailed illustration,
+        PixOLine is designed to provide a practical creative workspace
+        directly on your device.
+      </p>
+
+
+      <!-- MISSION -->
+
+      <h2>2. Our Mission</h2>
+
+      <p>
+        Our mission is to make creative design tools accessible to
+        more people by providing an easy-to-use design experience
+        without requiring complicated professional software.
+      </p>
+
+      <p>
+        We believe that everyone should have the opportunity to
+        experiment with visual design, express ideas, and create
+        something they are proud of.
+      </p>
+
+      <div class="values-grid">
+
+        <div class="value-card">
+
+          <div class="icon">🎨</div>
+
+          <h3>Creativity</h3>
+
+          <p>
+            Encourage users to explore ideas and express themselves
+            through visual design.
+          </p>
+
+        </div>
+
+
+        <div class="value-card">
+
+          <div class="icon">✨</div>
+
+          <h3>Simplicity</h3>
+
+          <p>
+            Build tools that are easy to understand while remaining
+            useful for creative projects.
+          </p>
+
+        </div>
+
+
+        <div class="value-card">
+
+          <div class="icon">🚀</div>
+
+          <h3>Innovation</h3>
+
+          <p>
+            Continue improving the app with new features and better
+            creative workflows.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- WHAT WE DO -->
+
+      <h2>3. What We Do</h2>
+
+      <p>
+        PixOLine focuses on developing tools and experiences that
+        support digital creativity on Android devices.
+      </p>
+
+      <ul>
+
+        <li>Create and edit digital graphics.</li>
+
+        <li>Design posters, banners, and social media content.</li>
+
+        <li>Work with images, text, shapes, colors, and other design elements.</li>
+
+        <li>Provide convenient project management and editing tools.</li>
+
+        <li>Support exporting and sharing finished creative work.</li>
+
+        <li>Continuously improve the application based on user feedback.</li>
+
+      </ul>
+
+
+      <!-- TEAM -->
+
+      <h2>4. Meet Our Team</h2>
+
+      <p>
+        PixOLine is supported by a small and passionate team of
+        designers, developers, and creative professionals. The
+        following team profiles are representative placeholder
+        information and can be replaced with your actual team details.
+      </p>
+
+
+      <div class="team-grid">
+
+        <!-- MEMBER 1 -->
+
+        <div class="team-card">
+
+          <img
+            src="https://i.pravatar.cc/180?img=12"
+            alt="Alex Morgan"
+            class="team-avatar"
+          >
+
+          <h3>Alex Morgan</h3>
+
+          <div class="designation">
+            Founder & Creative Director
+          </div>
+
+          <p>
+            Leads the product vision and focuses on creating a simple
+            and enjoyable design experience.
+          </p>
+
+        </div>
+
+
+        <!-- MEMBER 2 -->
+
+        <div class="team-card">
+
+          <img
+            src="https://i.pravatar.cc/180?img=32"
+            alt="Sarah Williams"
+            class="team-avatar"
+          >
+
+          <h3>Sarah Williams</h3>
+
+          <div class="designation">
+            UI/UX Designer
+          </div>
+
+          <p>
+            Designs user experiences and interfaces that keep PixOLine
+            intuitive and easy to use.
+          </p>
+
+        </div>
+
+
+        <!-- MEMBER 3 -->
+
+        <div class="team-card">
+
+          <img
+            src="https://i.pravatar.cc/180?img=11"
+            alt="Daniel Carter"
+            class="team-avatar"
+          >
+
+          <h3>Daniel Carter</h3>
+
+          <div class="designation">
+            Android Developer
+          </div>
+
+          <p>
+            Works on application development, performance, and
+            Android platform compatibility.
+          </p>
+
+        </div>
+
+
+        <!-- MEMBER 4 -->
+
+        <div class="team-card">
+
+          <img
+            src="https://i.pravatar.cc/180?img=47"
+            alt="Emily Johnson"
+            class="team-avatar"
+          >
+
+          <h3>Emily Johnson</h3>
+
+          <div class="designation">
+            Graphic Designer
+          </div>
+
+          <p>
+            Creates visual assets, design concepts, templates, and
+            creative resources for PixOLine.
+          </p>
+
+        </div>
+
+
+        <!-- MEMBER 5 -->
+
+        <div class="team-card">
+
+          <img
+            src="https://i.pravatar.cc/180?img=68"
+            alt="Michael Anderson"
+            class="team-avatar"
+          >
+
+          <h3>Michael Anderson</h3>
+
+          <div class="designation">
+            Product & Community Manager
+          </div>
+
+          <p>
+            Connects with users, gathers feedback, and helps guide
+            product improvements and community initiatives.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- USER FOCUS -->
+
+      <h2>5. Built With Users in Mind</h2>
+
+      <p>
+        We believe that a good creative application should be shaped
+        by the people who use it. User feedback helps us understand
+        what works well, what can be improved, and which features
+        could make the creative process easier.
+      </p>
+
+      <p>
+        We welcome suggestions, feature requests, bug reports, and
+        general feedback from the PixOLine community.
+      </p>
+
+
+      <!-- FUTURE -->
+
+      <h2>6. Our Vision for the Future</h2>
+
+      <p>
+        We want PixOLine to continue growing into a useful and
+        approachable creative platform for Android users.
+      </p>
+
+      <p>
+        As the application evolves, we plan to improve existing
+        creative tools, refine the user experience, introduce new
+        capabilities, and make project creation more convenient.
+      </p>
+
+      <div class="notice">
+
+        <p>
+          <strong>Have an idea for PixOLine?</strong>
+          Your feedback can help shape future improvements. Visit our
+          <a href="contact.html">Contact Us</a> page to send us your
+          suggestions or feedback.
+        </p>
+
+      </div>
+
+
+      <!-- SUPPORT -->
+
+      <h2>7. Get Involved</h2>
+
+      <p>
+        There are several ways to explore PixOLine and stay connected
+        with the project.
+      </p>
+
+      <ul>
+
+        <li>
+          Download and try the latest version of PixOLine.
+        </li>
+
+        <li>
+          Explore our available features and creative tools.
+        </li>
+
+        <li>
+          Visit the <a href="support.html">Support</a> page for help
+          and troubleshooting.
+        </li>
+
+        <li>
+          Send feedback and feature suggestions through our
+          <a href="contact.html">Contact Us</a> page.
+        </li>
+
+      </ul>
+
+
+      <!-- CLOSING -->
+
+      <h2>8. Thank You</h2>
+
+      <p>
+        Thank you for taking the time to learn more about PixOLine.
+        We are excited to continue building tools that help people
+        turn their ideas into creative work.
+      </p>
+
+      <p>
+        Whether you are a beginner exploring graphic design or an
+        experienced creator looking for a convenient mobile workflow,
+        we hope PixOLine can be a useful part of your creative journey.
+      </p>
+
+    </article>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-links">
+
+      <a href="about.html">About</a>
+
+      <a href="support.html">Support</a>
+
+      <a href="privacy-and-policy.html">
+        Privacy Policy
+      </a>
+
+      <a href="terms-and-conditions.html">
+        Terms of Service
+      </a>
+
+      <a href="contact.html">
+        Contact Us
+      </a>
+
+    </div>
+
+    <p>
+      © 2026 PixOLine. All rights reserved.
+    </p>
+
+  </footer>
+</body>
+</html>
